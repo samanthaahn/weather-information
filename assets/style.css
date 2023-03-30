@@ -3,6 +3,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  flex: display;
 }
 
 h1 {
@@ -12,6 +13,13 @@ h1 {
 }
 
 .card-center {
-    background-color: green;
+    background-color: rgb(125, 132, 205);
+}
+
+.card-element {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 20px;
+    margin: 20px;
 }
 
