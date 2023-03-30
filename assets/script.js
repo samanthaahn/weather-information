@@ -18,20 +18,12 @@ submitBtn.addEventListener('click',function(){
     return response.json();
   }).then(function(data){
     console.log(data);
-
     for (var i = 0; i < data.list.length; i++) {
       if(data.list[i].dt_txt.includes('12:00:00')){
         console.log(data.list[i]);
         var cardInfo = document.createElement("div")
         cardInfo.classList.add('card');
-
-        var date = 
-        var tempurature = 
-        var windSpeed = 
-        var humidity = 
-        var city = 
-        var icon = 
-
+        cardInfo.innerHTML= "<div class='card-body'><h5 class='card-title'>" + "Date:" + data.list[i].dt_txt + "</h5><h6 class='card-subtitle mb-2 text-muted'>"+ "Temperature:" + data.list[i].main.temp + "<h6 class='card-subtitle mb-2 text-muted'>" + "Wind Speed" + data.list[i].wind.speed + "<h6 class='card-subtitle mb-2 text-muted'>" + "Humidity:" + data.list[i].main.humidity + "<h6 class='card-subtitle mb-2 text-muted'>" + data.list[i].main.humidity + "<h6></div>" 
         var card = document.querySelector('.card-element')
         card.append(cardInfo);
       
@@ -40,5 +32,4 @@ submitBtn.addEventListener('click',function(){
   })
 });
 
-//5 day forcast: Date, icon, weather, conditions, temperature, wind StereoPannerNode, and humidity
-//"<div class='card-body'><h5 class='card-title'>Date" + data.list[i].dt_txt + data.list[i].main.humidity + data.list[i].wind.speed + "</h5><h6 class='card-subtitle mb-2 text-muted'>" + data.list[i].main.temp +"<h6></div>"  
+//5 day forcast: Date, icon, weather, conditions, temperature, wind StereoPannerNode, and humidity 
