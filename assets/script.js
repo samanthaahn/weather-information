@@ -1,17 +1,7 @@
-// This is the open weather api 
-
-//api.openweathermap.org/data/2.5/forecast?q={city name}&appid=ce895f0400d0fe16be29264e2d060cb6
-
-// fetch('https://api.openweathermap.org/data/2.5/forecast?q=chicago&appid=ce895f0400d0fe16be29264e2d060cb6').then(function(response){
-//   return response.json();
-// }).then(function(data){
-// console.log(data);
-// })
-
 var input = document.querySelector('.input');
 var submitBtn = document.querySelector('.submit')
 
-
+// This is my event listener for my 5-day forcast
 submitBtn.addEventListener('click',function(){
   fetch('https://api.openweathermap.org/data/2.5/forecast?q=' +input.value + '&appid=ce895f0400d0fe16be29264e2d060cb6').then
   (function(response){
