@@ -22,12 +22,23 @@ submitBtn.addEventListener('click',function(){
     for (var i = 0; i < data.list.length; i++) {
       if(data.list[i].dt_txt.includes('12:00:00')){
         console.log(data.list[i]);
-        var cardInfo = document.createElement("<div class='card' style='width: 18rem;'><div class='card-body'><h5 class='card-title'>Card title</h5><h6 class='card-subtitle mb-2 text-muted'>Card subtitle</h6></div></div>")
+        var cardInfo = document.createElement("div")
+        cardInfo.classList.add('card');
+
+        var date = 
+        var tempurature = 
+        var windSpeed = 
+        var humidity = 
+        var city = 
+        var icon = 
+
         var card = document.querySelector('.card-element')
         card.append(cardInfo);
+      
       }
     }
   })
 });
 
-//5 day forcast: Date, icon, weather, conditions, temperature, wind StereoPannerNode, and humidity 
+//5 day forcast: Date, icon, weather, conditions, temperature, wind StereoPannerNode, and humidity
+//"<div class='card-body'><h5 class='card-title'>Date" + data.list[i].dt_txt + data.list[i].main.humidity + data.list[i].wind.speed + "</h5><h6 class='card-subtitle mb-2 text-muted'>" + data.list[i].main.temp +"<h6></div>"  
