@@ -1,5 +1,11 @@
 var input = document.querySelector(".input");
 var submitBtn = document.querySelector(".submit");
+// var currentDate = document.getElementbyId("currentDate");
+// var fiveDay = document.getElementById("forcastdate");
+
+// currentDate.textContent = dayjs.unix(data.dt).format('MM/DD/YYYY');
+
+// fiveDay.textContent = dayjs(data.list[i].dt_txt ).format('MM/DD/YYYY');
 
 // this is for the weather icons: https://openweathermap.org/img/w/10d.png
 
@@ -16,11 +22,13 @@ submitBtn.addEventListener("click", function () {
   })
 .then(function (data) {
     console.log(data);
+  var dateCurrent = dayjs.unix(data.dt).format('MM/DD/YYYY');
+
     var currentDay = document.createElement('div');
     currentDay.classList.add('card');
-    currentDay.innerHTML = "<div class='card-body'><h5 class='card-title'>" +
+    currentDay.innerHTML = "<div class='card-body'><h5 class='card-title' id='currentDate'>" +
     "Date:" +
-    data.dt +
+    dateCurrent +
     "</h5><h6 class='card-subtitle mb-2 text-muted'>" +
     "Temperature:" +
     data.main.temp +
@@ -52,15 +60,17 @@ submitBtn.addEventListener("click", function () {
     })
     .then(function (data) {
       console.log(data);
+    
       for (var i = 0; i < data.list.length; i++) {
+        var fiveDay = dayjs(data.list[i].dt_txt ).format('MM/DD/YYYY');
         if (data.list[i].dt_txt.includes("12:00:00")) {
             console.log(data.list[i]);
             var cardInfo = document.createElement("div");
             cardInfo.classList.add("card");
             cardInfo.innerHTML =
-              "<div class='card-body'><h5 class='card-title'>" +
+              "<div class='card-body'><h5 class='card-title' id='forcastdate'>" +
               "Date:" +
-              data.list[i].dt_txt +
+              fiveDay +
               "</h5><h6 class='card-subtitle mb-2 text-muted'>" +
               "Temperature:" +
               data.list[i].main.temp +
