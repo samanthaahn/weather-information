@@ -7,6 +7,7 @@ var submitBtn = document.querySelector(".submit");
 
 //This is my event listener for the current day
 submitBtn.addEventListener("click", function () {
+
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" + input.value +"&appid=ce895f0400d0fe16be29264e2d060cb6"
     )
@@ -22,17 +23,16 @@ submitBtn.addEventListener("click", function () {
     var currentDay = document.createElement('div');
     currentDay.classList.add('card');
     currentDay.innerHTML = "<div class='card-body'><h5 class='card-title' id='currentDate'>" +
-    "Date:" +
-    dateCurrent +
+    ' ' + dateCurrent +
     "</h5><h6 class='card-subtitle mb-2 text-muted'>" +
-    "Temperature:" +
-    data.main.temp +
+    "Temperature: " +
+    data.main.temp + '°F' +
     "<h6 class='card-subtitle mb-2 text-muted'>" +
-    "Wind Speed" +
-    data.wind.speed +
+    "Wind Speed " +
+    data.wind.speed + ' MPH' +
     "<h6 class='card-subtitle mb-2 text-muted'>" +
-    "Humidity:" +
-    data.main.humidity +
+    "Humidity: " +
+    data.main.humidity + '%' +
     "<h6></div>";
     
     currentDayCard.append(currentDay);
@@ -65,19 +65,16 @@ submitBtn.addEventListener("click", function () {
             cardInfo.classList.add("card");
             cardInfo.innerHTML =
               "<div class='card-body'><h5 class='card-title' id='forcastdate'>" +
-              "Date:" +
               fiveDay +
               "</h5><h6 class='card-subtitle mb-2 text-muted'>" +
-              "Temperature:" +
-              data.list[i].main.temp +
+              "Temperature: " + 
+              data.list[i].main.temp + '°F' +
               "<h6 class='card-subtitle mb-2 text-muted'>" +
-              "Wind Speed" +
-              data.list[i].wind.speed +
+              "Wind Speed: " +
+              data.list[i].wind.speed + 'MPH' +
               "<h6 class='card-subtitle mb-2 text-muted'>" +
-              "Humidity:" +
-              data.list[i].main.humidity +
-              "<h6 class='card-subtitle mb-2 text-muted'>" +
-              data.list[i].main.humidity +
+              "Humidity: " +
+              data.list[i].main.humidity + '%' +
               "<h6></div>";
             
             card.append(cardInfo);
@@ -106,6 +103,9 @@ var searchedCity = JSON.parse(localStorage.getItem('searchedCity'));
         searchHistory.append(searchHistoryBtn);
       }
     }
+
+    // localFunction();
+    // createBtn();
 
 // var searchThings = function(searchedCity){
 //   var exists = cityResponse && cityResponse.inclues(searchedCity);
