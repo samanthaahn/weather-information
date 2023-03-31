@@ -6,7 +6,7 @@ This is a weather website! It will give you the current forcast and a fiveday fo
 
 ## Deploy link
 
-
+https://samanthaahn.github.io/weather-information/
 
 ## Installation
 
