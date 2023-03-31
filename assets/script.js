@@ -1,11 +1,6 @@
 var input = document.querySelector(".input");
 var submitBtn = document.querySelector(".submit");
-// var currentDate = document.getElementbyId("currentDate");
-// var fiveDay = document.getElementById("forcastdate");
 
-// currentDate.textContent = dayjs.unix(data.dt).format('MM/DD/YYYY');
-
-// fiveDay.textContent = dayjs(data.list[i].dt_txt ).format('MM/DD/YYYY');
 
 // this is for the weather icons: https://openweathermap.org/img/w/10d.png
 
@@ -18,6 +13,7 @@ submitBtn.addEventListener("click", function () {
     )
     .then(function (response) {
       localFunction();
+      createBtn();
     return response.json();
   })
 .then(function (data) {
@@ -54,7 +50,6 @@ submitBtn.addEventListener("click", function () {
       "&appid=ce895f0400d0fe16be29264e2d060cb6"
   )
     .then(function (response) {
-      localFunction();
       return response.json();
       
     })
@@ -99,7 +94,17 @@ var searchedCity = JSON.parse(localStorage.getItem('searchedCity'));
       searchedCity.push(input.value);  
       localStorage.setItem('searchedCity', JSON.stringify(searchedCity));
       }
+    }
 
-    
+    function createBtn () {
+      var cityResponse = JSON.parse(localStorage.getItem('searchedCity'));
+      var searchHistory = document.querySelector(".searchhistory");
+      for (var i = 0; i < cityResponse.length; i++) {
+        var searchHistoryBtn = document.createElement("button");
+        searchHistoryBtn.innerText=cityResponse[i];
+        searchHistory.append(searchHistoryBtn);
+      }
+
+
     }
 //5 day forcast: Date, icon, weather, conditions, temperature, wind StereoPannerNode, and humidity
