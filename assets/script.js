@@ -5,7 +5,6 @@ var submitBtn = document.querySelector(".submit");
 // this is for the weather icons: https://openweathermap.org/img/w/10d.png
 
 
-
 //This is my event listener for the current day
 submitBtn.addEventListener("click", function () {
   fetch(
@@ -35,12 +34,8 @@ submitBtn.addEventListener("click", function () {
     "Humidity:" +
     data.main.humidity +
     "<h6></div>";
-
     
     currentDayCard.append(currentDay);
-
-localFunction();
-createBtn();
 
   }
   )}
@@ -91,9 +86,6 @@ submitBtn.addEventListener("click", function () {
     });
 });
 
-
-
-
 function localFunction () {
 var searchedCity = JSON.parse(localStorage.getItem('searchedCity'));
 
@@ -105,14 +97,6 @@ var searchedCity = JSON.parse(localStorage.getItem('searchedCity'));
       }
     }
 
-// var searchThings = function(searchedCity){
-//   var exists = cityResponse && cityResponse.inclues(searchedCity);
-//   if(exists) {
-//   }else{
-    
-//   }
-// }
-
     function createBtn () {
       var cityResponse = JSON.parse(localStorage.getItem('searchedCity'));
       var searchHistory = document.querySelector(".searchhistory");
@@ -123,6 +107,12 @@ var searchedCity = JSON.parse(localStorage.getItem('searchedCity'));
       }
     }
 
-
+// var searchThings = function(searchedCity){
+//   var exists = cityResponse && cityResponse.inclues(searchedCity);
+//   if(exists) {
+//   }else{
+    
+//   }
+// }
 
 //5 day forcast: Date, icon, weather, conditions, temperature, wind StereoPannerNode, and humidity
