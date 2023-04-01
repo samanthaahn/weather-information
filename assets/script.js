@@ -21,12 +21,14 @@ submitBtn.addEventListener("click", function () {
     console.log(data);
   var dateCurrent = dayjs.unix(data.dt).format('MM/DD/YYYY');
   var currentDayCard = document.querySelector('.currentday');
+  var currentDayIcon = data.weather[0].icon;
+  var currentDayIconUrl = `https://openweathermap.org/img/w/${currentDayIcon}.png`
   currentDayCard.innerHTML='';
 
     var currentDay = document.createElement('div');
     currentDay.classList.add('card');
     currentDay.innerHTML = "<div class='card-body'><h5 class='card-title' id='currentDate'>" + data.name +
-    ' ' + dateCurrent +
+    ' ' + dateCurrent + "<img id='icon' src='" + currentDayIconUrl +"'>" +
     "</h5><h6 class='card-subtitle mb-2 text-muted'>" +
     "Temperature: " +
     data.main.temp + '°F' +
@@ -64,11 +66,13 @@ submitBtn.addEventListener("click", function () {
         var fiveDay = dayjs(data.list[i].dt_txt ).format('MM/DD/YYYY');
         if (data.list[i].dt_txt.includes("12:00:00")) {
             console.log(data.list[i]);
+            var fiveDayIcon = data.list[i].weather[0].icon;
+            var fiveDayIconUrl = `https://openweathermap.org/img/w/${fiveDayIcon}.png`
             var cardInfo = document.createElement("div");
             cardInfo.classList.add("card");
             cardInfo.innerHTML =
-              "<div class='card-body'><h5 class='card-title' id='forcastdate'>" +
-              fiveDay +
+              "<div class='card-body'><h5 class='card-title' id='forcastdate'><img id='icon' src='" + fiveDayIconUrl +"'>" +
+              fiveDay + 
               "</h5><h6 class='card-subtitle mb-2 text-muted'>" +
               "Temperature: " + 
               data.list[i].main.temp + '°F' +

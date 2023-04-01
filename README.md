@@ -16,9 +16,13 @@ N/A
 When you first enter the weather dashboard, you'll see a text box. Enter the city you want and you'll get the current forcast and a five-day forcast with all the information you need. Forcast information includes: date, temperature, wind speed, and humidity. 
 
 
-![alt text](./assets/images/Screenshot%202023-03-30%20at%2010.14.45%20PM.png)
+![alt text](./assets/images/Screenshot%202023-03-31%20at%209.40.55%20PM.png)
 
-![alt text](./assets/images/Screenshot%202023-03-30%20at%2010.14.57%20PM.png)
+![alt text](./assets/images/Screenshot%202023-03-31%20at%209.42.48%20PM.png)
+
+![alt text](./assets/images/Screenshot%202023-03-31%20at%209.42.57%20PM.png
+
+![alt text](./assets/images/Screenshot%202023-03-31%20at%209.43.08%20PM.png)
 
 
 ## Credits
