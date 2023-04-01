@@ -8,6 +8,9 @@ var submitBtn = document.querySelector(".submit");
 //This is my event listener for the current day
 submitBtn.addEventListener("click", function () {
 
+  localFunction();
+  createBtn();
+
   fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" + input.value +"&appid=ce895f0400d0fe16be29264e2d060cb6"
     )
@@ -22,7 +25,7 @@ submitBtn.addEventListener("click", function () {
 
     var currentDay = document.createElement('div');
     currentDay.classList.add('card');
-    currentDay.innerHTML = "<div class='card-body'><h5 class='card-title' id='currentDate'>" +
+    currentDay.innerHTML = "<div class='card-body'><h5 class='card-title' id='currentDate'>" + data.name +
     ' ' + dateCurrent +
     "</h5><h6 class='card-subtitle mb-2 text-muted'>" +
     "Temperature: " +
@@ -97,16 +100,16 @@ var searchedCity = JSON.parse(localStorage.getItem('searchedCity'));
     function createBtn () {
       var cityResponse = JSON.parse(localStorage.getItem('searchedCity'));
       var searchHistory = document.querySelector(".searchhistory");
+      searchHistory.innerHTML='';
       for (var i = 0; i < cityResponse.length; i++) {
         var searchHistoryBtn = document.createElement("button");
+        searchHistoryBtn.setAttribute('data-city',cityResponse[i]);
         searchHistoryBtn.innerText=cityResponse[i];
         searchHistory.append(searchHistoryBtn);
       }
     }
 
-    // localFunction();
-    // createBtn();
-
+//activity 20 unity 4 
 // var searchThings = function(searchedCity){
 //   var exists = cityResponse && cityResponse.inclues(searchedCity);
 //   if(exists) {
